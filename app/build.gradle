@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolVersion
+
+    defaultConfig {
+        applicationId  rootProject.ext.applicationId
+        minSdkVersion rootProject.ext.minSdkVersion
+        multiDexEnabled true
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/atomicfu.kotlin_module'
+    }
+    dataBinding{
+        enabled = true
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //Support Dependencies
+    implementation nativeDependencies.appCompat
+    implementation nativeDependencies.coreLib
+    implementation nativeDependencies.constraintLayoutLib
+    implementation nativeDependencies.kotlinLib
+    implementation nativeDependencies.lifeCycleLib
+    kapt nativeDependencies.lifeCycleCompilerLib
+    implementation nativeDependencies.designSupportLib
+    implementation nativeDependencies.swipeRefreshLayoutLib
+    implementation nativeDependencies.coroutineAndroid
+    //Unit Test Dependencies
+    testImplementation unitTestDependencies.junit
+    testImplementation unitTestDependencies.mockito
+    testImplementation unitTestDependencies.powerMock
+    testImplementation unitTestDependencies.powerMockJunit
+    testImplementation unitTestDependencies.powerMockMockito
+    //Third Party Dependencies
+    implementation thirdPartyDependencies.rxAndroidLib
+    implementation thirdPartyDependencies.rxKotlinLib
+    implementation thirdPartyDependencies.picassoLib
+    implementation thirdPartyDependencies.okHttpLib
+    implementation thirdPartyDependencies.retrofitLib
+    implementation thirdPartyDependencies.okHttpLogging
+    implementation thirdPartyDependencies.gsonConverter
+    implementation thirdPartyDependencies.rxAdapter
+    implementation thirdPartyDependencies.circularImageView
+    implementation thirdPartyDependencies.shimmerEffectLib
+
+    implementation thirdPartyDependencies.roomDatabaseRuntime
+    kapt thirdPartyDependencies.roomDatabaseCompiler
+    testImplementation thirdPartyDependencies.roomDatabaseTestHelper
+
+    implementation thirdPartyDependencies.daggerLib
+    kapt thirdPartyDependencies.daggerCompilerLib
+    implementation thirdPartyDependencies.daggerAndroidLib
+    implementation thirdPartyDependencies.daggerAndroidSupport
+    kapt thirdPartyDependencies.daggerAndroidProcessor
+
+}

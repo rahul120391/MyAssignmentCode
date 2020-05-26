@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <!--Color Codes-->
+    <color name="alto">#dddddd</color>
+    <color name="white">#ffffff</color>
+    <color name="red">#ff0000</color>
+    <color name="shark">#25282B</color>
+    <color name="mercury">#e8e8e8</color>
+    <color name="abbey">#52575c</color>
+    <color name="tunDora">#4a4a4a</color>
+    <color name="gray">#929292</color>
+    <color name="gallery">#fafafa</color>
+    <color name="wildSand">#f5f5f5</color>
+    <color name="chateauGreen">#31b057</color>
+</resources>

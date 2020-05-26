@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">GoJek</string>
+    <string name="trending">Trending</string>
+    <string name="retry">Retry</string>
+    <string name="sortByStars">Sort by stars</string>
+    <string name="sortByName">Sort by name</string>
+    <string name="dummyText">Lorem Ipsum</string>
+    <string name="noDatFound">No Data Found</string>
+    <string name="somethingWentWrong">Something went wrong\u002e\u002e</string>
+    <string name="onApiFailTextMessage">An alien is probably blocking your signal</string>
+    <string name="noInternetAvailable">No internet available</string>
+</resources>

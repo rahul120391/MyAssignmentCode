@@ -1,0 +1,99 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.71'
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.6.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext{
+    applicationId = "com.example.gojek"
+    buildToolVersion = "29.0.2"
+    compileSdkVersion = 29
+    minSdkVersion = 19
+    targetSdkVersion = 29
+    versionCode = 1
+    versionName = "1.0"
+    appCompatVersion = '1.1.0'
+    supportVersion = '1.1.0'
+    swipeRefreshLayoutVersion = '1.0.0'
+    recyclerViewVersion = '1.1.0'
+    constraintLayoutVersion = '1.1.3'
+    roomDatabaseVersion = '2.2.5'
+    daggerVersion = '2.27'
+    lifeCycleVersion = '1.1.1'
+    shimmerLibraryVersion = '0.5.0'
+    retrofitVersion = '2.8.1'
+    coroutineVersion ='1.3.2'
+    rxAndroidKotlinVersiion = '3.0.0'
+    okHttpVersion = '4.4.0'
+    gsonVersion = '2.8.6'
+    circularImageViewVersion ='3.1.0'
+    picassoVersion = '2.71828'
+    junitVersion = '4.12'
+    espressoVersion = '3.2.0'
+    junitAssertionsVersion = '1.1.1'
+    mockitoVersion = '2.23.0'
+    powerMockVersion = '2.0.0-RC.4'
+
+    nativeDependencies = [
+            appCompat                 : "androidx.appcompat:appcompat:${appCompatVersion}",
+            designSupportLib          : "com.google.android.material:material:${supportVersion}",
+            swipeRefreshLayoutLib     : "androidx.swiperefreshlayout:swiperefreshlayout:${swipeRefreshLayoutVersion}",
+            coreLib                   : "androidx.core:core-ktx:${appCompatVersion}",
+            constraintLayoutLib       : "androidx.constraintlayout:constraintlayout:${constraintLayoutVersion}",
+            kotlinLib                 : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            lifeCycleLib              : "android.arch.lifecycle:extensions:${lifeCycleVersion}",
+            lifeCycleCompilerLib      : "android.arch.lifecycle:compiler:${lifeCycleVersion}",
+            coroutineAndroid          : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${coroutineVersion}"
+    ]
+
+    unitTestDependencies = [
+            junit                     : "junit:junit:${junitVersion}",
+            mockito                   : "org.mockito:mockito-core:${mockitoVersion}",
+            powerMock                 : "org.powermock:powermock-core:${powerMockVersion}",
+            powerMockJunit            : "org.powermock:powermock-module-junit4:${powerMockVersion}",
+            powerMockMockito          : "org.powermock:powermock-api-mockito2:${powerMockVersion}"
+    ]
+
+    thirdPartyDependencies = [
+            rxAndroidLib          : "io.reactivex.rxjava3:rxandroid:${rxAndroidKotlinVersiion}",
+            rxKotlinLib           : "io.reactivex.rxjava3:rxkotlin:${rxAndroidKotlinVersiion}",
+            picassoLib            : "com.squareup.picasso:picasso:${picassoVersion}",
+            okHttpLib             : "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            roomDatabaseRuntime   : "androidx.room:room-runtime:${roomDatabaseVersion}",
+            roomDatabaseCompiler  : "androidx.room:room-compiler:${roomDatabaseVersion}",
+            roomDatabaseTestHelper: "androidx.room:room-testing:${roomDatabaseVersion}",
+            retrofitLib           : "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            okHttpLogging         : "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+            gsonConverter         : "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            rxAdapter             : "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+            daggerLib             : "com.google.dagger:dagger:${daggerVersion}",
+            daggerCompilerLib     : "com.google.dagger:dagger-compiler:${daggerVersion}",
+            daggerAndroidLib      : "com.google.dagger:dagger-android:${daggerVersion}",
+            daggerAndroidSupport  : "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            circularImageView     : "de.hdodenhof:circleimageview:${circularImageViewVersion}",
+            shimmerEffectLib      : "com.facebook.shimmer:shimmer:${shimmerLibraryVersion}"
+    ]
+
+}
